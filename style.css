@@ -1,0 +1,155 @@
+:root {
+    --color-pale-blue: hsl(225, 100%, 94%);
+    --color-bright-blue: hsl(245, 75%, 52%);
+    --color-bright-blue-shadow: hsla(245, 75%, 52%, 0.2);
+    --color-bright-blue-hover: hsla(245, 75%, 52%, 0.7);
+    --color-very-pale-blue: hsl(225, 100%, 98%);
+    --color-desaturated-blue: hsl(224, 23%, 55%);
+    --color-desaturated-blue-shadow: hsla(224, 23%, 55%, 0.3);
+    --color-dark-blue: hsl(223, 47%, 23%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('./images/pattern-background-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: var(--color-pale-blue);
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem;
+}
+
+.card {
+    margin: auto;
+    max-width: 450px;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 1rem var(--color-desaturated-blue-shadow);
+}
+
+.hero-image {
+    width: 100%;
+}
+
+.card__content {
+    padding: 2rem 3rem;
+    text-align: center;
+}
+
+.card__title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+}
+
+.card__description {
+    color: var(--color-desaturated-blue);
+    line-height: 1.7;
+}
+
+.tile {
+    display: flex;
+    align-items: center;
+    border-radius: 0.7rem;
+    background-color: var(--color-very-pale-blue);
+    padding: 1.5rem;
+}
+
+.card__content .tile {
+    margin: 1.5rem 0;
+}
+
+.tile__content-wrapper {
+    padding: 0 1.3rem;
+    line-height: 1.5;
+}
+
+.tile__title {
+    font-weight: 900;
+}
+
+.tile__description {
+    color: var(--color-desaturated-blue);
+}
+
+.tile__action {
+    margin-left: auto;
+    font-weight: 700;
+}
+
+.tile__action:hover {
+    color: var(--color-bright-blue-hover);
+}
+
+.card__content .button {
+    margin-top: 0.5rem;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.7rem;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.button--primary {
+    background-color: var(--color-bright-blue);
+    color: #fff;
+    box-shadow: 0 1rem 1.5rem var(--color-bright-blue-shadow);
+}
+
+.button--primary:hover {
+    background-color: var(--color-bright-blue-hover);
+}
+
+.button--secondary {
+    background-color: transparent;
+    color: var(--color-desaturated-blue);
+}
+
+.button--secondary:hover {
+    color: black;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-image: url('./images/pattern-background-mobile.svg');
+    }
+
+    .card__content {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .tile {
+        padding: 1rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .tile {
+        flex-direction: column;
+    }
+    .tile__action {
+        margin-left: 0;
+    }
+}
